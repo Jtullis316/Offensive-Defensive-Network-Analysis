@@ -86,6 +86,9 @@ The Red Team was able to penetrate Target 1 and retrieve the following confide
 			- cd ..
 			- ls
 			- cat flag2.txt
+			
+			![flag2](https://user-images.githubusercontent.com/92223941/167325463-abec4f96-5346-4b02-89d8-152dc391f0bd.PNG)
+
 
 	- flag3.txt: afc01ab56b50591e7dccf93122770cd2
 		- Exploit Used
