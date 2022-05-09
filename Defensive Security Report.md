@@ -16,14 +16,15 @@ The following machines were identified on the network:
   - **Operating System:** Windows
   - **Purpose:** the main host machine
   - **IP Address:** 192.168.1.1
+ 
 * Kali
-o Operating System: Linux
-o Purpose: The main attacking machine
-o IP Address: 192.168.1.90
+  - **Operating System:** Linux
+  - **Purpose:** The main attacking machine
+  - **IP Address:** 192.168.1.90
 * Elk
-o Operating System: Linux
-o Purpose: keeping logs
-o IP Address: 192.168.1.100
+  - **Operating System:** Linux
+  - **Purpose:** Keeping logs
+  - **IP Address:** 192.168.1.100
 * Target 1
 o Operating System: Linux
 o Purpose: The target machine to be attacked
