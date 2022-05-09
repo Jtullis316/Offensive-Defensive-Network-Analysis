@@ -65,6 +65,8 @@ The Red Team was able to penetrate Target 1 and retrieve the following confide
 
 			- I then login into Michael via SSH 
 			- SSH michael@192.168.1.110 password: michael
+			![flag1g](https://user-images.githubusercontent.com/92223941/167324082-3fc31b7f-4941-42ed-a7aa-83717c4d95ab.PNG)
+
 			- I then went into the html directory and listed the directories in it
 			- cd /var/www/html
 			- ls
