@@ -95,15 +95,36 @@ The Red Team was able to penetrate Target 1 and retrieve the following confide
 			- I went back to the html directory and went into the wordpress directory and listed the directories
 			- cd html
 			- cd wordpress
+			
+			![flag3a](https://user-images.githubusercontent.com/92223941/167325569-dc746cd4-2576-49c0-8df8-37dc32edf0f4.PNG)
+
 			- I then went into the wp-config file and found the password for sql login
 			- Nano wp-config.php
+			
+			![flag3b](https://user-images.githubusercontent.com/92223941/167325638-870dc113-3eda-4792-bba7-c003cb2396df.PNG)
+			![flag3c](https://user-images.githubusercontent.com/92223941/167325672-71cdd3a8-44bf-4fde-b8e3-54b083990ded.PNG)
+
+
 			- I logged in via sql
 			- mysql -u root -P password: R@v3nSecurity
+			
+			![flag3d](https://user-images.githubusercontent.com/92223941/167325716-23e594d1-5838-443b-81ea-5369e1bf53ba.PNG)
+
 			- I then viewed the databases then viewed the tables
 			- show databases;
 			- show tables;
+			
+			![flag3e](https://user-images.githubusercontent.com/92223941/167325769-473c1a9a-947c-4760-aeba-7934237064d0.PNG)
+			![flag3f](https://user-images.githubusercontent.com/92223941/167325809-1d6fc6a6-e45e-44ed-ae22-b19346092a2f.PNG)
+
+
 			- I then selected wp_posts and was able to find flag3
 			- select * from wp_posts;
+			
+			![flag3g](https://user-images.githubusercontent.com/92223941/167325856-51d21d20-cd5b-4c10-9568-3c38b3f7f971.PNG)
+			![flag3h](https://user-images.githubusercontent.com/92223941/167325887-ab8c0c7f-e164-4bab-8800-02261a97f9e6.PNG)
+
+
 
 	- Flag4.txt: 715dea6c055b9fe3337544932f2941ce
 		- Exploit Used
