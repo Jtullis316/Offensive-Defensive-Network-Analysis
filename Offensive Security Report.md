@@ -14,6 +14,9 @@ $ nmap -sV 192.168.1.110
 
 This scan identifies the services below as potential points of entry:
 
+![nmap](https://user-images.githubusercontent.com/92223941/167322975-5349cecb-c273-4a42-b673-84b126b66bb3.PNG)
+
+
 * Target 1
 	- Port 22/TCP SSH
 	- Port 80/TCP http
@@ -38,6 +41,8 @@ The Red Team was able to penetrate Target 1 and retrieve the following confide
 		- Exploit Used
 			- Used wpscan to enumerate the user from the      wordpress website
 			- wpscan –url http://192.168.1.110/wordpress -enumerate u
+			![flag1a](https://user-images.githubusercontent.com/92223941/167323054-f8c2b10b-e834-45a1-bf7f-1283fe656693.PNG)
+
 			- Used SSH scanner module on Metasploit to brute force login attempts with the username and Michael and wordlists from Kali
 			- Msfconsole
 			- Use auxiliary/scanner/ssh/ssh_login
@@ -47,6 +52,15 @@ The Red Team was able to penetrate Target 1 and retrieve the following confide
 			- set USERNAME Michael
 			- set VERBOSE true
 			- run
+			
+			![flag1c](https://user-images.githubusercontent.com/92223941/167322697-b6a57985-93ba-4480-87b8-1155fb5ec86e.PNG)
+			![flag1d](https://user-images.githubusercontent.com/92223941/167322753-bc60b2cf-8925-423d-aaef-10d562a389a3.PNG)
+			![flag1e](https://user-images.githubusercontent.com/92223941/167322783-4532f436-9483-4d4d-9c7b-35467c6147fd.PNG)
+			![flag1f](https://user-images.githubusercontent.com/92223941/167322800-4b27040c-e4e8-4bfb-92a7-888fa5753e72.PNG)
+
+
+
+
 			- I then login into Michael via SSH 
 			- SSH michael@192.168.1.110 password: michael
 			- I then went into the html directory and listed the directories in it
