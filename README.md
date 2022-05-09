@@ -4,4 +4,4 @@ I worked as a security engineer for a company supporting the SOC infrastructure.
 
 - [Offensive Security Report](https://github.com/Jtullis316/Offensive-Defensive-Network-Analysis/blob/main/Offensive%20Security%20Report.md)
 - [Defensive Security Report](https://github.com/Jtullis316/Offensive-Defensive-Network-Analysis/blob/main/Defensive%20Security%20Report.md)
-- [Network Analysis Report](https://github.com/Jtullis316/Offensive-Defensive-Network-Analysis/blob/main/Network%20Analysis.md)
+- [Network Analysis Report](https://github.com/Jtullis316/Offensive-Defensive-Network-Analysis/blob/main/Network%20Analysis%20Report.md)
