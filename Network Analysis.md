@@ -1,6 +1,6 @@
-Network Analysis
+## Network Analysis
 
-Time Thieves
+### Time Thieves
 
 At least two users on the network have been wasting time on YouTube. Usually, IT wouldn't pay much mind to this behavior, but it seems these people have created their own web server on the corporate network. So far, Security knows the following about these time thieves:
 
@@ -24,7 +24,7 @@ You must inspect your traffic capture to answer the following questions:
 
  
 
-Vulnerable Windows Machines
+### Vulnerable Windows Machines
 
 The Security team received reports of an infected Windows host on the network. They know the following:
 
@@ -51,7 +51,7 @@ Inspect your traffic to answer the following questions:
  
 4.	As a bonus, retrieve the desktop background of the Windows host.
 
-Illegal Downloads
+### Illegal Downloads
 
 IT was informed that some users are torrenting on the network. The Security team does not forbid the use of torrents for legitimate purposes, such as downloading operating systems. However, they have a strict policy against copyright infringement.
 
