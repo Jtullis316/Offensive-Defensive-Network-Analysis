@@ -48,13 +48,21 @@ Excessive HTTP Errors is implemented as follows:
 * **Vulnerability Mitigated:** failed to get into folders or files
 * **Reliability:** High reliability
 
+![httperror](https://user-images.githubusercontent.com/92223941/167330398-a8c776eb-fd45-4440-9641-cb4938adf434.PNG)
+
+
+
+
 **HTTP Request Size Monitor**
 
 HTTP Request Size Monitor is implemented as follows:
 * **Metric:** WHEN sum() of http.request.bytes OVER all documents
 * **Threshold:** above 3500 for the last minute
 * **Vulnerability Mitigated:** port scans
-* **Reliability:** medium reliability
+* **Reliability:** Medium reliability
+
+![httprequestsize](https://user-images.githubusercontent.com/92223941/167330539-fb98fd55-28ac-4f7e-bcf1-8d68f8554d86.PNG)
+
 
 **CPU Usage Monitor**
 
@@ -62,7 +70,10 @@ CPU Usage Monitor is implemented as follows:
 * **Metric:** WHEN max() OF system.process.cpu.total.pct OVER all documents
 * **Threshold:** Above 0.5 for the last 5 minutes
 * **Vulnerability Mitigated:** Take control of the computer. Possibly scan for malware
-* **Reliability:** medium reliability
+* **Reliability:** Medium reliability
+
+![cpuusage](https://user-images.githubusercontent.com/92223941/167330601-e352ee19-8e15-46c2-9ab2-50bedaf6b12c.PNG)
+
 
 ### Suggestions for Going Further 
 * Each alert above pertains to a specific vulnerability/exploit. Recall that alerts only detect malicious behavior, but do not stop it. For each vulnerability/exploit identified by the alerts above, suggest a patch. E.g., implementing a blocklist is an effective tactic against brute-force attacks. It is not necessary to explain how to implement each patch.
