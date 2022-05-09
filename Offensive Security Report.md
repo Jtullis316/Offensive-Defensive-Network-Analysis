@@ -54,6 +54,15 @@ The Red Team was able to penetrate Target 1 and retrieve the following confide
 			- set USERNAME Michael
 			- set VERBOSE true
 			- run
+			
+			![flag1c](https://user-images.githubusercontent.com/92223941/167323904-5f7dbbbf-c62e-4840-9d8d-5c3cb6ca28d3.PNG)
+			![flag1d](https://user-images.githubusercontent.com/92223941/167323988-ee4f5658-4624-4ac0-9aa0-6d47643b3918.PNG)
+			![flag1e](https://user-images.githubusercontent.com/92223941/167324002-8ede5afa-1078-40b4-a2aa-29477dd533b2.PNG)
+			![flag1f](https://user-images.githubusercontent.com/92223941/167324020-5c639462-a395-4025-a2c9-09fd8bd3af5d.PNG)
+
+
+
+
 			- I then login into Michael via SSH 
 			- SSH michael@192.168.1.110 password: michael
 			- I then went into the html directory and listed the directories in it
