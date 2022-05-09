@@ -13,9 +13,9 @@
 The following machines were identified on the network:
 
 * Azure Hyper-V
-  - Operating System: Windows
-  - Purpose: the main host machine
-  - IP Address: 192.168.1.1
+  - **Operating System:** Windows
+  - **Purpose:** the main host machine
+  - **IP Address:** 192.168.1.1
 * Kali
 o Operating System: Linux
 o Purpose: The main attacking machine
