@@ -1,12 +1,12 @@
 ## Red Team: Summary of Operations
 
-Table of Contents
+### Table of Contents
 
 * Exposed Services
 * Critical Vulnerabilities
 * Exploitation
 
-Exposed Services
+### Exposed Services
 
 Nmap scan results for each machine reveal the below services and OS details:
 
@@ -32,7 +32,7 @@ The following vulnerabilities were identified on each target:
 	- Weak user password
 	- Misconfigure use of privilege escalation
 
-Exploitation
+### Exploitation
 
 The Red Team was able to penetrate Target 1 and retrieve the following confidential data:
 
