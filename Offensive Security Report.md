@@ -70,9 +70,15 @@ The Red Team was able to penetrate Target 1 and retrieve the following confide
 			- I then went into the html directory and listed the directories in it
 			- cd /var/www/html
 			- ls
+			
+			![flag1h](https://user-images.githubusercontent.com/92223941/167324979-d7ebf9a0-ca4b-41f1-902d-44ea39952d6a.PNG)
+
 			- I then went into the service.html file and found flag1.
 			- nano service.html
 			-  ctrl+w “flag”
+			
+			![flag1i](https://user-images.githubusercontent.com/92223941/167325079-19322eb6-7552-42c7-bd5c-23466815a0e4.PNG)
+
 
 	- flag2.txt: fc3fd58dcdad9ab23faca6e9a36e581c
 		- Exploit Used
